@@ -26,8 +26,6 @@ done
 
 #Reset all devices after testing
 
-#!/bin/sh
-
 instruments -s devices \
  | grep Simulator \
  | grep -o "[0-9A-F]\{8\}-[0-9A-F]\{4\}-[0-9A-F]\{4\}-[0-9A-F]\{4\}-[0-9A-F]\{12\}" \
