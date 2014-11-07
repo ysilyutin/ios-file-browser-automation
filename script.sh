@@ -1,15 +1,15 @@
 #!/bin/bash
 
-IOS_UUIDS=('01449A43-32A1-4723-832A-3ADFABAE498A iPhone 5 with 7.1','44EC8254-B7CE-40F3-92FB-01C7C01FFF56 iPhone 5 with 8.1')
+IOS_UDIDS=('01449A43-32A1-4723-832A-3ADFABAE498A iPhone 5 with 7.1','44EC8254-B7CE-40F3-92FB-01C7C01FFF56 iPhone 5 with 8.1')
 
 SLEEP=8
 
 IFS=','
-for element in ${IOS_UUIDS[@]}; do
+for element in ${IOS_UDIDS[@]}; do
 	iphone="${element#* }"
-	uuid="${element%% *}"
+	udid="${element%% *}"
 	
-	echo "Testing '$iphone' (UUID='$uuid')"
+	echo "Testing '$iphone' (UDID='$udid')"
 	for i in {2..4}; do
 		echo "Running Test $i"
 	
@@ -21,5 +21,5 @@ for element in ${IOS_UUIDS[@]}; do
 		sleep "$SLEEP"
 	done
 	
-	echo "Finished testing '$iphone' (UUID='$uuid')"
+	echo "Finished testing '$iphone' (UDID='$udid')"
 done
